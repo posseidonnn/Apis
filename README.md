@@ -3,16 +3,21 @@
 Multi-SQLite search API for a VPS, exposed publicly via Cloudflare Tunnel (no domain needed).
 
 ## Folder structure
+
+```
 apis/
 ├── app.py
 ├── requirements.txt
 ├── deploy.sh
 ├── users_0.db        <- your .db file(s), keep them in the root
 └── office.db
+```
 
 ## Run
+```bash
 chmod +x deploy.sh
 ./deploy.sh
+```
 
 At the end, the terminal prints the public API URL and a ready-to-use search link.
 
