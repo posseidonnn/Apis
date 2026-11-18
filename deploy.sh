@@ -2,9 +2,9 @@
 set -e
 
 APP_DIR="$(cd "$(dirname "$0")" && pwd)"
-SERVICE="myapi"
+SERVICE="Apis"
 TUNNEL="cf-tunnel"
-PORT=8000
+PORT=8010
 LOG="$APP_DIR/cloudflared.log"
 
 echo "== venv + dependencies =="
@@ -18,7 +18,7 @@ echo "== API key =="
 if [ -z "$API_KEYS" ]; then
   API_KEYS=$(python3 -c "import secrets; print(secrets.token_urlsafe(24))")
   echo "API_KEYS=$API_KEYS" > .env
-  echo "Notun API key: $API_KEYS"
+  echo "New API key: $API_KEYS"
 fi
 
 echo "== app service =="
