@@ -27,6 +27,19 @@ GET /reload?key=KEY                -> reloads .db files after adding new ones, w
 - Logs:                    sudo journalctl -u apis -f
                            sudo journalctl -u cf-tunnel -f
 
+## Environment setup
+
+No manual setup needed — `deploy.sh` automatically generates a random
+API key and saves it to `.env` on first run. The key is printed in the
+terminal at the end of deployment, inside the ready-to-use search link.
+
+To use your own key instead, copy the sample file and edit it before
+running `deploy.sh`:
+
+    cp sample.env .env
+
+See `sample.env` for the expected format.
+
 ## Notes
 - The trycloudflare.com URL changes if the tunnel service restarts.
 - `.env` holds `API_KEYS` — never commit or share this file publicly.
